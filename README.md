@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Next.js Admin Dashboard
 
-## Getting Started
+A professional, high-performance dashboard layout built with **Next.js 16**, **Shadcn UI**, and **Tailwind CSS**. This project features a persistent sidebar, dynamic navigation, and full dark mode support.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Persistent Sidebar State:** Uses server-side cookies to remember if the sidebar is collapsed or expanded, eliminating layout shift on page refresh.
+-   **Dynamic Navigation:** A robust sidebar with support for:
+    -   Collapsible menu groups.
+    -   Nested sub-menus (multi-level navigation).
+    -   Menu badges (e.g., notification counts).
+    -   Action buttons (e.g., "Add Project" plus icon).
+-   **Dark Mode Support:** Fully integrated with `next-themes` including a polished theme switcher in the Navbar.
+-   **Responsive Design:** Mobile-friendly layout using Shadcn's `SidebarProvider` and `SidebarTrigger`.
+-   **Modern Typography:** Optimized with Next.js Google Fonts (`Geist` and `Geist Mono`).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Framework:** [Next.js 16 (App Router)](https://nextjs.org/)
+-   **UI Components:** [Shadcn UI](https://ui.shadcn.com/)
+-   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+-   **Icons:** [Lucide React](https://lucide.dev/)
+-   **Theme Management:** [Next Themes](https://github.com/pacocoursey/next-themes)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+-   `app/layout.tsx`: The heart of the app. Configures providers (Theme, Sidebar) and handles the server-side cookie for the sidebar state.
+-   `components/AppSidebar.tsx`: The primary navigation component. Contains menu logic, collapsible groups, and the footer user-profile dropdown.
+-   `components/Navbar.tsx`: The top bar featuring the sidebar toggle, dashboard links, and the theme mode switcher.
+-   `components/providers/`: Contains the `ThemeProvider` for consistent UI rendering.
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ Installation & Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repo-url>
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
 
-## Deploy on Vercel
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4.  **Open the app:**
+    Navigate to [http://localhost:3000](http://localhost:3000) to see your dashboard.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Usage Notes
+
+### Adding Navigation Items
+To add new links to the sidebar, simply update the `items` array in `components/AppSidebar.tsx`:
+
+```typescript
+const items = [
+    {
+        title: "New Page",
+        url: "/new-page",
+        icon: MyIcon,
+    },
+];
