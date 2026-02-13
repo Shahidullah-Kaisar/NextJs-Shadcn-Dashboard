@@ -160,7 +160,7 @@ const AppSidebar = () => {
                     <SidebarGroup>
                         <SidebarGroupLabel asChild>
                             <CollapsibleTrigger>
-                                Collabsible Group
+                                Collapsible Group
                                 <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
                             </CollapsibleTrigger>
                         </SidebarGroupLabel>
