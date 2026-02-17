@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { cookies } from "next/headers";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -48,6 +49,7 @@ export default async function RootLayout({
                             <div className="px-4">{children}</div>
                         </main>
                     </SidebarProvider>
+                    <Toaster position="top-center" />
                 </ThemeProvider>
             </body>
         </html>
