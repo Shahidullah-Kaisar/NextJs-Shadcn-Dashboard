@@ -1,6 +1,6 @@
 "use client";
 
-import { LogOut, Moon, Settings, Sun, User } from "lucide-react";
+import { CreditCard, LogOut, Moon, Settings, Sun, User } from "lucide-react";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import {
@@ -57,6 +57,21 @@ const Navbar = () => {
                             <DropdownMenuLabel>My Account</DropdownMenuLabel>
                             <DropdownMenuItem>
                                 <User /> Profile
+                            </DropdownMenuItem>
+                            <DropdownMenuItem asChild>
+                                <Link href="/payments">
+                                    <CreditCard /> Payments
+                                </Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem asChild>
+                                <Link href="/users">
+                                    <User /> Users
+                                </Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem asChild>
+                                <Link href="/users/1">
+                                    <User /> Single User
+                                </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <Settings /> Settings
